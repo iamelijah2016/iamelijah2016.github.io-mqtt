@@ -1,12 +1,12 @@
 // basic functionalities
 function connectFunc(){
-  console.log("Connecting..");
+  console.log("Connecting to " + document.getElementById('broker').value);
   // client = mqtt.connect("ws://broker.hivemq.com:8000/mqtt")
   client = mqtt.connect(document.getElementById('broker').value)
-  console.log(document.getElementById('broker').value);
+  // console.log(document.getElementById('broker').value);
 
   client.on("connect", function(){
-    console.log("Successfully connected");
+    console.log("Successfully connected to " + document.getElementById('broker').value);
   })
 
   client.on("message", function (topic, payload) {
